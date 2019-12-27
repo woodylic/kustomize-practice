@@ -1,0 +1,14 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sidecar-patch
+spec:
+  template:
+    spec:
+      containers:
+      - name: istio-proxy
+        image: docker.io/istio/proxyv2
+        args:
+        - proxy
+        - sidecar
