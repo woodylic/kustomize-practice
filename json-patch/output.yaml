@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: my-ingress
+spec:
+  rules:
+  - host: foo.bar.io
+    http:
+      paths:
+      - backend:
+          serviceName: my-api
+          servicePort: 80
+      - backend:
+          serviceName: my-test
+          servicePort: 8081
+        path: /test

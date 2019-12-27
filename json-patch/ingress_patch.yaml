@@ -1,0 +1,11 @@
+- op: replace
+  path: /spec/rules/0/host
+  value: foo.bar.io
+
+- op: add
+  path: /spec/rules/0/http/paths/-
+  value:
+    path: '/test'
+    backend:
+      serviceName: my-test
+      servicePort: 8081
